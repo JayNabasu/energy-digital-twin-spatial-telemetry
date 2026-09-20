@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OML 119 Deepwater Subsea Digital Twin | NNPC Academy Spatial Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <!-- Three.js & OrbitControls CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+  <div class="twin-container">
+    <!-- Top HUD Navigation -->
+    <header class="twin-nav">
+      <div class="brand">
+        <div class="logo-badge">3D</div>
+        <div>
+          <h1>OML 119 Deepwater Subsea Digital Twin</h1>
+          <p class="subtitle">Spatial Computing & Real-Time Telemetry Platform • Lead: <a href="https://github.com/JayNabasu" target="_blank">Jerry Nabasu</a></p>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <button type="button" id="btn-mode-toggle" class="btn-primary">
+          <span id="mode-text">Start Academy Training Walkthrough</span>
+        </button>
+        <div class="telemetry-badge">
+          <span class="pulse-dot"></span>
+          <span>SCADA Stream: Active</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 3D Canvas Canvas Layer -->
+    <div id="canvas-container"></div>
+
+    <!-- Floating 3D Sensor Inspection HUD (Right Side) -->
+    <aside id="sensor-hud" class="floating-hud">
+      <div class="hud-header">
+        <span class="hud-tag">SENSOR TELEMETRY OVERLAY</span>
+        <button type="button" id="btn-close-hud" class="btn-icon">×</button>
+      </div>
+      <h3 id="hud-sensor-name">Select a 3D Sensor Node</h3>
+      <div class="hud-metric-box">
+        <div class="hud-value" id="hud-sensor-val">--</div>
+        <div class="hud-unit" id="hud-sensor-unit">PSI</div>
+      </div>
+      <div class="hud-status-badge" id="hud-status-badge">STANDBY</div>
+      
+      <div class="hud-specs">
+        <div class="spec-row">
+          <span>Sensor ID:</span>
+          <strong id="hud-sensor-id">--</strong>
+        </div>
+        <div class="spec-row">
+          <span>Type:</span>
+          <strong id="hud-sensor-type">--</strong>
+        </div>
+        <div class="spec-row">
+          <span>Target Range:</span>
+          <strong id="hud-sensor-range">--</strong>
+        </div>
+      </div>
+
+      <div class="hud-instructions">
+        <p>Click any glowing sensor node in the 3D subsea manifold to view live operational readings and diagnostics.</p>
+      </div>
+    </aside>
+
+    <!-- Training Mode Overlay Modal -->
+    <div id="training-modal" class="training-banner" style="display: none;">
+      <div class="training-info">
+        <span class="badge-scenario">NNPC Academy VR Training Scenario</span>
+        <h4>Subsea Manifold Isolation & Leak Inspection Walkthrough</h4>
+        <p>Goal: Inspect all 4 critical subsea sensor nodes to verify system integrity.</p>
+        <div class="progress-bar-wrapper">
+          <div id="training-progress-bar" class="progress-bar-fill" style="width: 0%;"></div>
+        </div>
+        <span id="training-progress-text">Progress: 0 of 4 inspected</span>
+      </div>
+      <button type="button" id="btn-submit-training" class="btn-success" style="display: none;">Submit xAPI Event to LMS</button>
+    </div>
+
+    <!-- Bottom Controls Guide -->
+    <footer class="controls-guide">
+      <span>🖱️ <strong>Left Click + Drag</strong>: Rotate Orbit</span>
+      <span>•</span>
+      <span>🖱️ <strong>Right Click + Drag</strong>: Pan Scene</span>
+      <span>•</span>
+      <span>📜 <strong>Scroll</strong>: Zoom In/Out</span>
+      <span>•</span>
+      <span>🎯 <strong>Click Glowing Node</strong>: Inspect Telemetry</span>
+    </footer>
+  </div>
+
+  <script src="/static/twin.js"></script>
+</body>
+</html>
