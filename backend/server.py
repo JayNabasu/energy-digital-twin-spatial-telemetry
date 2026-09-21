@@ -19,7 +19,7 @@ FRONTEND_DIR = BASE_DIR / "frontend"
 app = FastAPI(
     title="Energy Asset 3D Digital Twin & Spatial Telemetry API",
     version="1.0.0",
-    description="Backend microservice delivering real-time telemetry overlays and LMS xAPI training integrations for OML 119 Deepwater Asset."
+    description="Backend microservice delivering real-time telemetry overlays and LMS xAPI training integrations for deepwater subsea assets."
 )
 
 app.add_middleware(

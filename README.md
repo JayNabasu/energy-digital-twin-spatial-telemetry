@@ -7,7 +7,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Author](https://img.shields.io/badge/Author-Jerry%20A.%20Nabasu-blue.svg)](https://github.com/JayNabasu)
 
-An interactive, browser-native 3D Digital Twin and spatial telemetry monitoring platform of the **OML 119 Deepwater Subsea Production Manifold**. Built with **Three.js (WebGL)**, procedural geometry, and a **FastAPI** telemetry bridge, it incorporates an **xAPI-compliant virtual reality training walkthrough** designed for enterprise Learning Management System (LMS) integration (NNPC Academy).
+An interactive, browser-native 3D Digital Twin and spatial telemetry monitoring platform of a **Deepwater Subsea Production Manifold**. Built with **Three.js (WebGL)**, procedural geometry, and a **FastAPI** telemetry bridge, it incorporates an **xAPI-compliant virtual reality training walkthrough** designed for enterprise Learning Management System (LMS) integration.
 
 ---
 
