@@ -146,12 +146,14 @@ def get_training_records():
     return {"total_records": len(LMS_TRAINING_RECORDS), "records": LMS_TRAINING_RECORDS}
 
 # Serve frontend
-if FRONTEND_DIR.exists():
-    app.mount("/static", StaticFiles(directory=str(FRONTEND_DIR)), name="static")
-
 @app.get("/")
 def serve_index():
     index_file = FRONTEND_DIR / "index.html"
     if index_file.exists():
         return FileResponse(str(index_file))
     return {"message": "3D Digital Twin API is operational. Visit /docs for OpenAPI specs."}
+
+if FRONTEND_DIR.exists():
+    app.mount("/static", StaticFiles(directory=str(FRONTEND_DIR)), name="static")
+    app.mount("/", StaticFiles(directory=str(FRONTEND_DIR)), name="frontend_root")
+
